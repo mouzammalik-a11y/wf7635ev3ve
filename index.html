@@ -170,21 +170,25 @@
     </div>
 
     <div class="card hidden" id="pageTwo">
-      <h1>Okay wow… you said YES 😭💖</h1>
+      <h1>Congratulations, Sehba 🎉</h1>
       <p class="love-text">
-        Congratulations 🎉 You have officially unlocked:
+        By clicking YES, you have officially signed up for the following (no refunds, no escape):
         <br><br>
-        ✔ Unlimited forehead kisses<br>
-        ✔ Me stealing your food (lovingly)<br>
-        ✔ Bad jokes that only you’ll laugh at<br>
-        ✔ A lifetime supply of "us against the world"
+        ✔ Unlimited kisses (randomly stolen)<br>
+        ✔ Me pretending not to stare at you (and failing)<br>
+        ✔ Listening to you… even when you say “nothing”<br>
+        ✔ Stealing your food but calling it sharing<br>
+        ✔ Laughing at jokes that aren’t funny (mine)<br>
+        ✔ Arguing over what to watch and watching nothing<br>
+        ✔ Me being annoying on purpose because you secretly like it<br>
+        ✔ A lifetime supply of “wait, come back, I wasn’t done”
         <br><br>
-        Sehba, you make my heart do backflips, somersaults, and occasionally forget how to function.
-        I promise to annoy you, support you, hype you up, and love you — even on days when I pretend not to steal the blanket.
+        Side effects may include random smiling, sudden happiness, and missing me even when I just left.
       </p>
 
-      <h2>Happy Valentine’s Day, my favorite human 💘</h2>
-      <div class="final">Forever starts now 💍✨</div>
+      <h2>Happy Valentine’s Day ❤️</h2>
+      <div class="final">You’re stuck with me now 😌💘</div>
+    </div>
     </div>
 
     <footer>
@@ -200,9 +204,13 @@
     }
 
     function runAway(btn) {
-      const x = Math.random() * 200 - 100;
-      const y = Math.random() * 200 - 100;
-      btn.style.transform = `translate(${x}px, ${y}px)`;
+      const x = Math.random() * 400 - 200;
+      const y = Math.random() * 300 - 150;
+      const scale = Math.random() * 0.5 + 0.8;
+      btn.style.transition = 'all 0.2s ease';
+      btn.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${Math.random()*360}deg)`;
+
+      btn.innerText = ['NOPE 😳','TRY AGAINpx, ${y}px)`;
     }
 
     function confettiHearts() {
