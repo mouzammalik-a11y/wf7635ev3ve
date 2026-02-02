@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Pookie 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #ffb6c1, #ff69b4);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .hearts span {
+      position: fixed;
+      bottom: -10vh;
+      font-size: 2rem;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+      animation: popIn 1.2s ease;
+    }
+
+    h2 {
+      font-weight: 300;
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      animation: fadeUp 1.5s ease;
+    }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .love-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-size: 1.1rem;
+      padding: 14px 28px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .yes {
+      background: #fff;
+      color: #ff1493;
+    }
+
+    .yes:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #fff;
+    }
+
+    .no {
+      background: transparent;
+      color: #fff;
+      border: 2px dashed #fff;
+      position: relative;
+    }
+
+    .no:hover {
+      transform: translateX(40px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .final {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin-top: 30px;
+      animation: popIn 1s ease;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.4rem; }
+      .final { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts" id="hearts"></div>
+
+  <div class="container">
+    <h1>Hey Pookie 💕</h1>
+    <h2>I built this little corner of the internet just for you</h2>
+
+    <div class="card" id="card">
+      <p class="love-text">
+        From the moment you walked into my life, things just felt… brighter. 
+        You make ordinary days feel special, my laughs louder, and my heart way softer than I ever planned.
+        <br><br>
+        So here I am, being brave, being cheesy, and being very serious about one thing 👀
+      </p>
+
+      <h2>Will you be my Valentine? 🌹</h2>
+
+      <div class="buttons">
+        <button class="yes" onclick="sayYes()">YES 💖</button>
+        <button class="no" onmouseover="runAway(this)">No 🙄</button>
+      </div>
+
+      <div class="final hidden" id="finalMessage">
+        YAY!!! 💘💘💘<br>
+        I knew it. You just made me the happiest person ever.
+      </div>
+    </div>
+
+    <footer>
+      Made with an unreasonable amount of love 💗
+    </footer>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById('finalMessage').classList.remove('hidden');
+      confettiHearts();
+    }
+
+    function runAway(btn) {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function confettiHearts() {
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('span');
+        heart.innerText = '💖';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        document.getElementById('hearts').appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }
+    }
+
+    // ambient floating hearts
+    setInterval(() => {
+      const heart = document.createElement('span');
+      heart.innerText = Math.random() > 0.5 ? '💗' : '💘';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 6 + 6) + 's';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 12000);
+    }, 800);
+  </script>
+
+</body>
+</html>
