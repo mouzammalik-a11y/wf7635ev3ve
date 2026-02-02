@@ -145,7 +145,7 @@
   <div class="hearts" id="hearts"></div>
 
   <div class="container">
-    <h1>Hey Pookie 💕</h1>
+    <h1>Hey Sehba 💕</h1>
     <h2>I built this little corner of the internet just for you</h2>
 
     <div class="card" id="card">
@@ -169,6 +169,24 @@
       </div>
     </div>
 
+    <div class="card hidden" id="pageTwo">
+      <h1>Okay wow… you said YES 😭💖</h1>
+      <p class="love-text">
+        Congratulations 🎉 You have officially unlocked:
+        <br><br>
+        ✔ Unlimited forehead kisses<br>
+        ✔ Me stealing your food (lovingly)<br>
+        ✔ Bad jokes that only you’ll laugh at<br>
+        ✔ A lifetime supply of "us against the world"
+        <br><br>
+        Sehba, you make my heart do backflips, somersaults, and occasionally forget how to function.
+        I promise to annoy you, support you, hype you up, and love you — even on days when I pretend not to steal the blanket.
+      </p>
+
+      <h2>Happy Valentine’s Day, my favorite human 💘</h2>
+      <div class="final">Forever starts now 💍✨</div>
+    </div>
+
     <footer>
       Made with an unreasonable amount of love 💗
     </footer>
@@ -176,7 +194,8 @@
 
   <script>
     function sayYes() {
-      document.getElementById('finalMessage').classList.remove('hidden');
+      document.getElementById('card').classList.add('hidden');
+      document.getElementById('pageTwo').classList.remove('hidden');
       confettiHearts();
     }
 
