@@ -2,119 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Sehba, Will You Be My Valentine? 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For My Pookie 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', 'Poppins', cursive;
+    }
+
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #ffb6c1, #ff69b4);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    .hearts span {
-      position: fixed;
-      bottom: -10vh;
-      font-size: 2rem;
-      animation: floatUp linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes floatUp {
-      to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #d6336c;
     }
 
     .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      max-width: 420px;
       text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-      animation: popIn 1.2s ease;
-    }
-
-    h2 {
-      font-weight: 300;
-      margin-bottom: 30px;
-      max-width: 700px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: popIn 1s ease;
     }
 
     @keyframes popIn {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 30px;
-      max-width: 700px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-      animation: fadeUp 1.5s ease;
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
-    @keyframes fadeUp {
-      0% { transform: translateY(40px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 20px;
     }
 
-    .love-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 30px;
+    .letter {
+      background: #fff0f6;
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 0.95rem;
+      min-height: 140px;
+      margin-bottom: 20px;
     }
 
     .buttons {
       display: flex;
-      gap: 20px;
       justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    button {
-      font-size: 1.1rem;
-      padding: 14px 28px;
-      border-radius: 40px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .yes {
-      background: #fff;
-      color: #ff1493;
-    }
-
-    .yes:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #fff;
-    }
-
-    .no {
-      background: transparent;
-      color: #fff;
-      border: 2px dashed #fff;
+      gap: 16px;
+      margin-top: 10px;
       position: relative;
     }
 
-    .no:hover {
-      transform: translateX(40px);
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #yesBtn {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: #ffd1e1;
+      color: #d6336c;
+      position: relative;
     }
 
     .hidden {
@@ -122,119 +93,101 @@
     }
 
     .final {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      margin-top: 30px;
-      animation: popIn 1s ease;
+      font-size: 1.4rem;
+      animation: popIn 0.6s ease;
     }
 
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      opacity: 0.8;
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2.4rem; }
-      .final { font-size: 2rem; }
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
+
 <body>
-
-  <div class="hearts" id="hearts"></div>
-
   <div class="container">
-    <h1>Hey Sehba 💕</h1>
-    <h2>I built this little corner of the internet just for you</h2>
+    <h1>Hi Sehba 🥹💖</h1>
+    <div class="subtitle">I made this just for you</div>
 
-    <div class="card" id="card">
-      <p class="love-text">
-        From the moment you walked into my life, things just felt… brighter. 
-        You make ordinary days feel special, my laughs louder, and my heart way softer than I ever planned.
-        <br><br>
-        So here I am, being brave, being cheesy, and being very serious about one thing 👀
-      </p>
+    <div class="letter" id="letter"></div>
 
-      <h2>Will you be my Valentine? 🌹</h2>
-
-      <div class="buttons">
-        <button class="yes" onclick="sayYes()">YES 💖</button>
-        <button class="no" onmouseover="runAway(this)">No 🙄</button>
-      </div>
-
-      <div class="final hidden" id="finalMessage">
-        YAY!!! 💘💘💘<br>
-        I knew it. You just made me the happiest person ever.
-      </div>
+    <div class="buttons" id="buttons">
+      <button id="yesBtn">Yes 💘</button>
+      <button id="noBtn">No 🙈</button>
     </div>
 
-    <div class="card hidden" id="pageTwo">
-      <h1>Congratulations, Sehba 🎉</h1>
-      <p class="love-text">
-        By clicking YES, you have officially signed up for the following (no refunds, no escape):
-        <br><br>
-        ✔ Unlimited kisses (randomly stolen)<br>
-        ✔ Me pretending not to stare at you (and failing)<br>
-        ✔ Listening to you… even when you say “nothing”<br>
-        ✔ Stealing your food but calling it sharing<br>
-        ✔ Laughing at jokes that aren’t funny (mine)<br>
-        ✔ Arguing over what to watch and watching nothing<br>
-        ✔ Me being annoying on purpose because you secretly like it<br>
-        ✔ A lifetime supply of “wait, come back, I wasn’t done”
-        <br><br>
-        Side effects may include random smiling, sudden happiness, and missing me even when I just left.
-      </p>
-
-      <h2>Happy Valentine’s Day ❤️</h2>
-      <div class="final">You’re stuck with me now 😌💘</div>
+    <div class="final hidden" id="finalMessage">
+      YAYYY 😭💖💖  
+      You just made me the happiest person ever.  
+      Happy Valentine’s Day, my pookie 💕
     </div>
-    </div>
-
-    <footer>
-      Made with an unreasonable amount of love 💗
-    </footer>
   </div>
 
   <script>
-    function sayYes() {
-      document.getElementById('card').classList.add('hidden');
-      document.getElementById('pageTwo').classList.remove('hidden');
-      confettiHearts();
-    }
+    const letterText = `Dear Sehba,
 
-    function runAway(btn) {
-      const x = Math.random() * 400 - 200;
-      const y = Math.random() * 300 - 150;
-      const scale = Math.random() * 0.5 + 0.8;
-      btn.style.transition = 'all 0.2s ease';
-      btn.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${Math.random()*360}deg)`;
+From the moment you walked into my life, everything got softer, warmer, and brighter.
+You make ordinary days feel special and special days feel unforgettable.
 
-      btn.innerText = ['NOPE 😳','TRY AGAIN 😂','NOT HAPPENING','NICE TRY 😏','ABSOLUTELY NOT'][Math.floor(Math.random()*5)];
-    }px, ${y}px)`;
-    }
+Your smile is my favorite sight.
+Your laugh is my favorite sound.
+And you… are my favorite person.
 
-    function confettiHearts() {
-      for (let i = 0; i < 30; i++) {
-        const heart = document.createElement('span');
-        heart.innerText = '💖';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        document.getElementById('hearts').appendChild(heart);
-        setTimeout(() => heart.remove(), 6000);
+So I made this little corner of the internet just to ask you something straight from my heart 💗`;
+
+    let index = 0;
+    const letterEl = document.getElementById("letter");
+
+    function typeLetter() {
+      if (index < letterText.length) {
+        letterEl.innerHTML += letterText.charAt(index);
+        index++;
+        setTimeout(typeLetter, 35);
       }
     }
+    typeLetter();
 
-    // ambient floating hearts
-    setInterval(() => {
-      const heart = document.createElement('span');
-      heart.innerText = Math.random() > 0.5 ? '💗' : '💘';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 6 + 6) + 's';
-      document.getElementById('hearts').appendChild(heart);
-      setTimeout(() => heart.remove(), 12000);
-    }, 800);
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseenter", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    const yesBtn = document.getElementById("yesBtn");
+    yesBtn.addEventListener("click", () => {
+      document.getElementById("buttons").classList.add("hidden");
+      document.getElementById("finalMessage").classList.remove("hidden");
+      launchHearts();
+    });
+
+    function launchHearts() {
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 7000);
+      }
+    }
   </script>
-
 </body>
 </html>
